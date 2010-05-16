@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+
+filepath = ENV['TM_FILEPATH']
+Dir.chdir(File.dirname(filepath))
+template = File.read(filepath)
+filename = File.expand_path(template.match(/\-# saveto: (.*)$/)[1])
+
+if filename then
+	require 'rubygems'
+	require 'haml'
+	haml_engine = Haml::Engine.new(template)
+	File.open(filename, 'w') { |f| f.write(haml_engine.render) }
+	puts "Saved to #{filename}."
+end</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>@s</string>
+	<key>name</key>
+	<string>Save as HTML</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>text.haml</string>
+	<key>uuid</key>
+	<string>03431DAA-9C06-4FE1-9896-737CDF0B1301</string>
+</dict>
+</plist>

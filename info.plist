@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>HAML+SASS Additions</string>
+	<key>ordering</key>
+	<array>
+		<string>FB682A82-1013-490A-9139-BA6A9B29D3A8</string>
+		<string>03431DAA-9C06-4FE1-9896-737CDF0B1301</string>
+	</array>
+	<key>uuid</key>
+	<string>C1AD4163-9716-46BB-88C1-37C708B370C3</string>
+</dict>
+</plist>
